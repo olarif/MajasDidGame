@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5378099628286797081}
   - component: {fileID: 5378099628286797086}
   - component: {fileID: 5378099628286797080}
-  - component: {fileID: 5378099628286797085}
+  - component: {fileID: 4065711063668479890}
   - component: {fileID: 5378099628286797084}
   m_Layer: 0
   m_Name: Player
@@ -50,10 +50,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 0966fdfb1eb429043b1b30ed59ed1487, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -88,8 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 0de4a06c5d67a434596d06eedb5af583, type: 2}
   skeleton: {fileID: 5378099628851480652}
-  _speed: {x: 0, y: 0}
---- !u!114 &5378099628286797085
+--- !u!114 &4065711063668479890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,7 +97,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5378099628286797083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 398acddc16ea95f45a46889edb0522ce, type: 3}
+  m_Script: {fileID: 11500000, guid: a9f198f72d957644fb527af6d01207bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &5378099628286797084
@@ -113,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: f406f25bbb5e13048a4ec3de62b4f68c, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 5fa58a7d24823ef448a62c1600bd2fee, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:

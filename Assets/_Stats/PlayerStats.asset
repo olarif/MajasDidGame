@@ -17,6 +17,7 @@ MonoBehaviour:
   GroundDeceleration: 70
   AirDeceleration: 30
   GroundingForce: -1.5
+  VerticalDeadzoneThreshold: 0.3
   HorizontalDeadzoneThreshold: 0.1
   MaxAirJumps: 0
   JumpPower: 10
@@ -25,12 +26,21 @@ MonoBehaviour:
   JumpEndEarlyGravityModifier: 3
   CoyoteFrames: 3
   JumpBufferFrames: 3
+  AllowLadders: 1
+  SnapToLadders: 1
+  LadderLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  LadderSnapSpeed: 0.05
+  LadderShimmySpeedMultiplier: 0.5
+  LadderClimbSpeed: 8
+  LadderSlideSpeed: 12
+  LadderCooldownFrames: 8
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 0
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
   GrounderDistance: 0.1
   WallDetectorSize: {x: 0.75, y: 1.25}
   ExternalVelocityDecay: 100
+  ShowWallDetection: 1
+  ShowLedgeDetection: 1

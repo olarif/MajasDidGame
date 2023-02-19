@@ -19,6 +19,9 @@ namespace PlayerController {
         [Tooltip("A constant downward force applied while grounded. Helps on slopes"), Range(0f, -10f)]
         public float GroundingForce = -1.5f;
 
+        [Tooltip("Minimum input req'd before you mount a ladder or climb a ledge. Avoids unwanted climbing using controllers"), Range(0.01f, 0.99f)]
+        public float VerticalDeadzoneThreshold = 0.3f;
+
         [Tooltip("Minimum input req'd before a left or right is recognized. Avoids drifting with sticky controllers"), Range(0.01f, 0.99f)]
         public float HorizontalDeadzoneThreshold = 0.1f;
 
@@ -44,13 +47,35 @@ namespace PlayerController {
         [Tooltip("The amount of fixed frames we buffer a jump. This allows jump input before actually hitting the ground")]
         public int JumpBufferFrames = 7;
         
+        [Header("LADDERS")]
+        [Tooltip("Allows climbing up and down ladders")]
+        public bool AllowLadders = true;
+
+        [Tooltip("When enabled, nudges the player to be centered on the ladder")]
+        public bool SnapToLadders = true;
+        
+        [Tooltip("Set this to the layer your ladders are on")]
+        public LayerMask LadderLayer;
+
+        [Tooltip("Ladder snap speed")]
+        public float LadderSnapSpeed = 0.05f;
+        
+        [Tooltip("Horizontal speed multiplier while attached to a ladder")]
+        public float LadderShimmySpeedMultiplier = 0.5f;
+
+        [Tooltip("How fast you climb ladders")]
+        public float LadderClimbSpeed = 8;
+
+        [Tooltip("How fast you slide down ladders")]
+        public float LadderSlideSpeed = 12;
+        
+        [Tooltip("How many frames can pass between ladder interactions. Helps jittery movement and jumping glitches")]
+        public int LadderCooldownFrames = 8;
+
         [Header("COLLISIONS")]
         [Tooltip("Set this to the layer your player is on")]
         public LayerMask PlayerLayer;
 
-        [Tooltip("The ground layer")]
-        public LayerMask _groundLayer;
-        
         [Tooltip("The detection distance for grounding and roof detection")]
         public float GrounderDistance = 0.1f;
 
@@ -60,5 +85,14 @@ namespace PlayerController {
         [Header("EXTERNAL")] 
         [Tooltip("The rate at which external velocity decays")]
         public int ExternalVelocityDecay = 100;
+
+#if UNITY_EDITOR
+        [Header("GIZMOS")] 
+        [Tooltip("Color: White")]
+        public bool ShowWallDetection = true;
+        
+        [Tooltip("Color: Red")]
+        public bool ShowLedgeDetection = true;
+#endif
     }
 }
